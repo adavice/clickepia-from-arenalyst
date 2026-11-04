@@ -1,0 +1,738 @@
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --accent: #f59e0b;
+  --accent-dark: #d97706;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --shadow-luxury: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+a {
+  cursor: pointer;
+}
+
+.glass-effect {
+  backdrop-filter: blur(20px);
+  background: var(--bg-glass);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-backdrop {
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.nav-item:hover {
+  transform: translateX(8px);
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
+}
+
+.luxury-shadow {
+  box-shadow: var(--shadow-luxury) !important;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mainTable {
+  margin-bottom: 30px;
+  display: block;
+}
+
+.mainTable td {
+  padding: 5px;
+  border: 1px solid #4f46e5;
+  color: #374151;
+}
+
+ul li.list-style {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+/* Navigation Styles */
+.nav-link {
+  color: var(--primary);
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--primary-dark);
+}
+
+.nav-link.active {
+  color: var(--primary-dark);
+}
+
+/* Card Styles */
+.feature-card {
+  border-radius: 0.75rem;
+}
+
+/* Avatar Upload */
+.avatar-upload {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 9999px;
+  background-color: rgb(55, 65, 81);
+  position: relative;
+  margin: 0 auto;
+}
+
+.upload-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal.show {
+  display: block;
+}
+
+.fade:not(.show) {
+  opacity: 0;
+  z-index: 20;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 32rem;
+  margin: 0 1rem;
+}
+
+/* Custom Role Select */
+.custom-role-select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}
+
+/* Chat Components */
+.chat-window {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.coach-item-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.chat-messages {
+  height: calc(100vh - 300px);
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.chat-input-container {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .chat-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.chat-input-row {
+  width: 100%;
+}
+
+.chat-buttons-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.chat-buttons-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Messages Styling */
+.message {
+  margin-bottom: 1rem;
+  max-width: 80%;
+}
+
+.message-content {
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+}
+
+.message.user {
+  margin-left: auto;
+}
+
+.message.user .message-content {
+  background-color: var(--primary);
+  color: white;
+}
+
+.message.bot {
+  margin-right: auto;
+}
+
+.message.bot .message-content {
+  background-color: rgb(31, 41, 55);
+  color: white;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Custom Scrollbar */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.chatbot-list {
+  min-height: 200px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.coach-list-panel {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/*form*/
+input[type="checkbox"]{
+  cursor: pointer;
+}
+
+.tooltip {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tooltip-button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*new styles*/
+.border-input {
+  border-color: hsl(240 6% 90%);
+}
+
+.list-disc{
+  list-style-type: disc;
+}
+
+.loading_gif{width: 120px;}
+
+/* ==========================================================
+   ИТОГОВЫЙ файл дополнений к стилям (Tailwind v4.1.13)
+   Объединяет: переменные темы + новые классы index.html
+   + дополнения для всех остальных страниц (в т.ч. Clickepia).
+   Порядок: 1) переменные, 2) классы index, 3) классы остальных страниц.
+   ========================================================== */
+
+/* ===== 1. ПЕРЕМЕННЫЕ ТЕМЫ ===== */
+/* ==========================================================
+   Переменные темы Tailwind v4.1 для index.html
+   Содержат всё, что нужно классам страницы: цвета, шрифты,
+   размеры текста, скругления, ширины контейнеров, тени, размытие.
+
+   Как подключить:
+   1) Со сборкой Tailwind: вставьте блок @theme в ваш входной CSS
+      (рядом с @import "tailwindcss";).
+   2) Без сборки (вместе с tailwind-v4-changes.css): блок :root
+      работает сам, @theme браузер просто игнорирует.
+   ========================================================== */
+
+   @theme {
+    /* --- Шрифт --- */
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+    /* --- Цвета палитры --- */
+    --color-white: #fff;
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-900: oklch(20.8% 0.042 265.755);
+    --color-slate-950: oklch(12.9% 0.042 264.695);
+    --color-purple-300: oklch(82.7% 0.119 306.383);
+    --color-purple-400: oklch(71.4% 0.203 305.504);
+    --color-purple-500: oklch(62.7% 0.265 303.9);
+    --color-purple-600: oklch(55.8% 0.288 302.321);
+    --color-purple-700: oklch(49.6% 0.265 301.924);
+    --color-purple-950: oklch(29.1% 0.149 302.717);
+    --color-violet-600: oklch(54.1% 0.281 293.009);
+    --color-fuchsia-500: oklch(66.7% 0.295 322.15);
+    --color-fuchsia-700: oklch(51.8% 0.253 323.949);
+    --color-indigo-600: oklch(51.1% 0.262 276.966);
+    --color-cyan-400: oklch(78.9% 0.154 211.53);
+    --color-cyan-500: oklch(71.5% 0.143 215.221);
+    --color-cyan-900: oklch(39.8% 0.07 227.392);
+  
+    /* --- Семантические цвета (классы ring-ring, ring-offset-background) --- */
+    --color-background: var(--color-slate-950);
+    --color-foreground: var(--color-white);
+    --color-primary: var(--color-violet-600);
+    --color-primary-foreground: var(--color-white);
+    --color-accent: var(--color-cyan-500);
+    --color-accent-foreground: var(--color-white);
+    --color-ring: var(--color-cyan-500);
+    --color-border: color-mix(in oklab, var(--color-white) 10%, transparent);
+  
+    /* --- Размеры текста --- */
+    --text-xs: 0.75rem;     --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;      --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;     --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;   --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;       --text-5xl--line-height: 1;
+    --text-7xl: 4.5rem;     --text-7xl--line-height: 1;
+  
+    /* --- Начертание, межстрочный интервал, трекинг --- */
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --leading-tight: 1.25;
+    --tracking-wide: 0.025em;
+  
+    /* --- Скругления --- */
+    --radius-xs: 0.125rem;
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+  
+    /* --- Ширины контейнеров (max-w-*) --- */
+    --container-md: 28rem;
+    --container-2xl: 42rem;
+    --container-3xl: 48rem;
+    --container-4xl: 56rem;
+    --container-7xl: 80rem;
+  
+    /* --- Брейкпоинты (sm:, md:, lg:) --- */
+    --breakpoint-sm: 40rem;
+    --breakpoint-md: 48rem;
+    --breakpoint-lg: 64rem;
+  
+    /* --- Размытие --- */
+    --blur-xl: 24px;
+    --blur-3xl: 64px;
+  
+    /* --- Тени --- */
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+    /* --- Отступы и анимации --- */
+    --spacing: 0.25rem;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+  }
+  
+  /* ==========================================================
+     То же самое в виде обычных переменных (для подключения без сборки)
+     ========================================================== */
+  :root {
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  
+    --color-white: #fff;
+    --color-slate-300: oklch(86.9% 0.022 252.894);
+    --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-900: oklch(20.8% 0.042 265.755);
+    --color-slate-950: oklch(12.9% 0.042 264.695);
+    --color-purple-300: oklch(82.7% 0.119 306.383);
+    --color-purple-400: oklch(71.4% 0.203 305.504);
+    --color-purple-500: oklch(62.7% 0.265 303.9);
+    --color-purple-600: oklch(55.8% 0.288 302.321);
+    --color-purple-700: oklch(49.6% 0.265 301.924);
+    --color-purple-950: oklch(29.1% 0.149 302.717);
+    --color-violet-600: oklch(54.1% 0.281 293.009);
+    --color-fuchsia-500: oklch(66.7% 0.295 322.15);
+    --color-fuchsia-700: oklch(51.8% 0.253 323.949);
+    --color-indigo-600: oklch(51.1% 0.262 276.966);
+    --color-cyan-400: oklch(78.9% 0.154 211.53);
+    --color-cyan-500: oklch(71.5% 0.143 215.221);
+    --color-cyan-900: oklch(39.8% 0.07 227.392);
+  
+    --color-background: var(--color-slate-950);
+    --color-foreground: var(--color-white);
+    --color-primary: var(--color-violet-600);
+    --color-primary-foreground: var(--color-white);
+    --color-accent: var(--color-cyan-500);
+    --color-accent-foreground: var(--color-white);
+    --color-ring: var(--color-cyan-500);
+    --color-border: color-mix(in oklab, var(--color-white) 10%, transparent);
+  
+    --text-xs: 0.75rem;     --text-xs--line-height: calc(1 / 0.75);
+    --text-sm: 0.875rem;    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-base: 1rem;      --text-base--line-height: calc(1.5 / 1);
+    --text-lg: 1.125rem;    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-xl: 1.25rem;     --text-xl--line-height: calc(1.75 / 1.25);
+    --text-2xl: 1.5rem;     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;   --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;    --text-4xl--line-height: calc(2.5 / 2.25);
+    --text-5xl: 3rem;       --text-5xl--line-height: 1;
+    --text-7xl: 4.5rem;     --text-7xl--line-height: 1;
+  
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --leading-tight: 1.25;
+    --tracking-wide: 0.025em;
+  
+    --radius-xs: 0.125rem;
+    --radius-sm: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
+  
+    --container-md: 28rem;
+    --container-2xl: 42rem;
+    --container-3xl: 48rem;
+    --container-4xl: 56rem;
+    --container-7xl: 80rem;
+  
+    --blur-xl: 24px;
+    --blur-3xl: 64px;
+  
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+    --spacing: 0.25rem;
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --default-font-family: var(--font-sans);
+  }
+  
+  /* ===== 2. КЛАССЫ index.html ===== */
+  /* ==========================================================
+     Изменения стилей index.html — эквиваленты классов Tailwind v4.1
+     Значения цветов берутся из стандартной темы v4 (--color-*).
+     Справочный файл: Tailwind генерирует всё это сам при сборке.
+     ========================================================== */
+  
+  /* ---------- 1. Переименованные классы (v3 -> v4) ---------- */
+  
+  .bg-linear-to-r {
+    --tw-gradient-position: to right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .bg-linear-to-br {
+    --tw-gradient-position: to bottom right in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+  .focus-visible\:outline-hidden:focus-visible {
+    --tw-outline-style: none;
+    outline-style: none;
+    @media (forced-colors: active) {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+  }
+  .rounded-sm {
+    border-radius: var(--radius-sm); /* 0.25rem */
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  /* ---------- 2. Градиенты ---------- */
+  
+  .from-slate-950 {
+    --tw-gradient-from: var(--color-slate-950);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-violet-600 {
+    --tw-gradient-from: var(--color-violet-600);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-purple-700 {
+    --tw-gradient-from: var(--color-purple-700);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .via-purple-950 {
+    --tw-gradient-via: var(--color-purple-950);
+    --tw-gradient-via-stops: var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-via) var(--tw-gradient-via-position), var(--tw-gradient-to) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-via-stops);
+  }
+  .to-cyan-500 {
+    --tw-gradient-to: var(--color-cyan-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .to-cyan-900 {
+    --tw-gradient-to: var(--color-cyan-900);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  
+  /* ---------- 3. Фоны ---------- */
+  
+  .bg-transparent   { background-color: transparent; }
+  .bg-slate-900     { background-color: var(--color-slate-900); }
+  .bg-slate-950     { background-color: var(--color-slate-950); }
+  .bg-cyan-400      { background-color: var(--color-cyan-400); }
+  .bg-cyan-500      { background-color: var(--color-cyan-500); }
+  .bg-fuchsia-500   { background-color: var(--color-fuchsia-500); }
+  .bg-fuchsia-700   { background-color: var(--color-fuchsia-700); }
+  .bg-indigo-600    { background-color: var(--color-indigo-600); }
+  
+  .bg-white\/5 {
+    background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
+  }
+  .bg-white\/10 {
+    background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+  }
+  .bg-purple-500\/20 {
+    background-color: color-mix(in oklab, var(--color-purple-500) 20%, transparent);
+  }
+  .bg-purple-600\/20 {
+    background-color: color-mix(in oklab, var(--color-purple-600) 20%, transparent);
+  }
+  .bg-cyan-500\/20 {
+    background-color: color-mix(in oklab, var(--color-cyan-500) 20%, transparent);
+  }
+  
+  /* ---------- 4. Размытие ---------- */
+  
+  .backdrop-blur-xl {
+    --tw-backdrop-blur: blur(var(--blur-xl)); /* 24px */
+    -webkit-backdrop-filter: var(--tw-backdrop-blur);
+    backdrop-filter: var(--tw-backdrop-blur);
+  }
+  .blur-3xl {
+    --tw-blur: blur(var(--blur-3xl)); /* 64px */
+    filter: var(--tw-blur);
+  }
+  
+  /* ---------- 5. Границы ---------- */
+  
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-white\/10 {
+    border-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+  }
+  .border-white\/20 {
+    border-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+  }
+  .border-purple-400\/20 {
+    border-color: color-mix(in oklab, var(--color-purple-400) 20%, transparent);
+  }
+  .border-purple-400\/30 {
+    border-color: color-mix(in oklab, var(--color-purple-400) 30%, transparent);
+  }
+  
+  /* ---------- 6. Цвета текста ---------- */
+  
+  .text-cyan-400   { color: var(--color-cyan-400); }
+  .text-purple-300 { color: var(--color-purple-300); }
+  .text-slate-300  { color: var(--color-slate-300); }
+  .text-slate-400  { color: var(--color-slate-400); }
+  
+  /* ---------- 7. Тень, анимация, типографика ---------- */
+  
+  .shadow-cyan-500\/30 {
+    --tw-shadow-color: color-mix(in oklab, var(--color-cyan-500) 30%, transparent);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--default-transition-timing-function); /* cubic-bezier(0.4, 0, 0.2, 1) */
+    transition-duration: var(--default-transition-duration);               /* 150ms */
+  }
+  .leading-tight {
+    --tw-leading: var(--leading-tight);
+    line-height: var(--leading-tight); /* 1.25 */
+  }
+  
+  /* ---------- 8. Hover (в v4 работает только на устройствах с hover) ---------- */
+  
+  @media (hover: hover) {
+    .hover\:bg-white\/10:hover {
+      background-color: color-mix(in oklab, var(--color-white) 10%, transparent);
+    }
+    .hover\:bg-white\/20:hover {
+      background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
+    }
+    .hover\:bg-purple-500\/30:hover {
+      background-color: color-mix(in oklab, var(--color-purple-500) 30%, transparent);
+    }
+    .hover\:text-cyan-400:hover {
+      color: var(--color-cyan-400);
+    }
+    .hover\:-translate-y-2:hover {
+      --tw-translate-y: calc(var(--spacing) * -2); /* -0.5rem */
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  
+  /* ===== 3. ДОПОЛНЕНИЯ ДЛЯ ОСТАЛЬНЫХ СТРАНИЦ ===== */
+  /* ==========================================================
+     Дополнение к theme-variables.css и tailwind-v4-changes.css
+     для страниц games, game_info, cancel, contactus.
+     Здесь только то, чего не было при перекраске index.html.
+     ========================================================== */
+  
+  /* ---------- 1. Переменные темы (добавить в @theme и в :root) ---------- */
+  @theme {
+    --blur-xs: 4px;              /* backdrop-blur-xs (бывший backdrop-blur-sm) */
+    --breakpoint-xl: 80rem;      /* xl:grid-cols-7 на странице games */
+    --container-xs: 20rem;       /* max-w-xs (подсказки на signup2) */
+  }
+  :root {
+    --blur-xs: 4px;
+    --breakpoint-xl: 80rem;
+    --container-xs: 20rem;
+  }
+  
+  /* ---------- 2. Новые классы ---------- */
+  
+  /* Размытие */
+  .backdrop-blur-xs {
+    --tw-backdrop-blur: blur(var(--blur-xs));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur);
+    backdrop-filter: var(--tw-backdrop-blur);
+  }
+  
+  /* Градиент вверх (оверлей на карточках игр) */
+  .bg-linear-to-t {
+    --tw-gradient-position: to top in oklab;
+    background-image: linear-gradient(var(--tw-gradient-stops));
+  }
+  
+  /* Полупрозрачные фоны информационных блоков (cancel) */
+  .bg-cyan-500\/10 {
+    background-color: color-mix(in oklab, var(--color-cyan-500) 10%, transparent);
+  }
+  .bg-purple-500\/10 {
+    background-color: color-mix(in oklab, var(--color-purple-500) 10%, transparent);
+  }
+  
+  /* Границы */
+  .border-cyan-400\/30 {
+    border-color: color-mix(in oklab, var(--color-cyan-400) 30%, transparent);
+  }
+  
+  /* Цвет иконки (game_info) */
+  .text-purple-400 {
+    color: var(--color-purple-400);
+  }
+  
+  /* Поля ввода (cancel, contactus) */
+  .placeholder\:text-slate-400::placeholder {
+    color: var(--color-slate-400);
+  }
+  .file\:text-white::file-selector-button {
+    color: var(--color-white);
+  }
+  .focus\:border-cyan-400:focus {
+    border-color: var(--color-cyan-400);
+  }
+  .focus\:outline-hidden:focus {
+    --tw-outline-style: none;
+    outline-style: none;
+    @media (forced-colors: active) {
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+  }
+  
+  /* Hover (в v4 только на устройствах с hover) */
+  @media (hover: hover) {
+    .hover\:border-cyan-400:hover {
+      border-color: var(--color-cyan-400);
+    }
+    .hover\:text-purple-300:hover {
+      color: var(--color-purple-300);
+    }
+  }
+  
+  /* ---------- 3. login.html / index-authorized.html ---------- */
+  @media (hover: hover) {
+    .hover\:text-slate-300:hover {
+      color: var(--color-slate-300);
+    }
+  }
+  
+  /* ---------- 4. signup2.html ---------- */
+  .focus\:ring-cyan-500:focus {
+    --tw-ring-color: var(--color-cyan-500);
+  }
+  
+  /* ---------- 5. Белый футер (все страницы) ---------- */
+  @theme {
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+  }
+  :root {
+    --color-slate-600: oklch(44.6% 0.043 257.281);
+  }
+  
+  .border-slate-300 { border-color: var(--color-slate-300); }
+  .text-slate-900   { color: var(--color-slate-900); }
+  .text-slate-600   { color: var(--color-slate-600); }
+  .text-violet-600  { color: var(--color-violet-600); }
+  
+  @media (hover: hover) {
+    .hover\:text-violet-600:hover {
+      color: var(--color-violet-600);
+    }
+  }
